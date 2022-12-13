@@ -31,8 +31,7 @@ document.querySelector('#btnEqual').addEventListener('click', ()=> {
             default: 
                 answerPhrase =`I always guess!\n\u{1F60E}`;
                 break;
-        } 
-       // debugger;
+        }        
         answerField.innerText = answerPhrase;
         gameRun = false;
     }
@@ -43,8 +42,10 @@ document.querySelector('#btnLess').addEventListener('click',()=>{
 })
 
 function GameStart (){
-    minValue = parseInt(prompt('The minimum value of the number for the game','0'));
-    maxValue = parseInt(prompt('The maximum value of the number for the game','100'));
+    minValue = parseInt(prompt('The minimum value of the number for the game','0')) || 0; 
+    (minValue < -999) ?  minValue = -999 :  minValue = minValue;
+    maxValue = parseInt(prompt('The maximum value of the number for the game','100')) || 100;
+    (maxValue > 999) ?  maxValue = 999 :  maxValue = maxValue;
     alert(`Think of a number from ${minValue} to ${maxValue}, and i guess it`);
     answerNumber  = Math.floor((minValue + maxValue) / 2);
     orderNumber = 1;
@@ -73,7 +74,7 @@ function CheckValue (isLess){
             gameRun = false;
         } else {        
             //debugger;
-            let phraseRandom = Math.round( Math.random()*2);                                
+            const phraseRandom = Math.round( Math.random()*2);                                
             (isLess)? maxValue = answerNumber  - 1 : minValue = answerNumber  + 1;
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
