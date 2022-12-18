@@ -1,4 +1,4 @@
-# A game in which the computer guesses the number conceived by the user.
+# A game in which the computer guesses the number conceived by the user (from -999 to 999).
 
 Developed as a practical task on the course '_Full-stack developer'_
 ---
@@ -7,7 +7,7 @@ Developed as a practical task on the course '_Full-stack developer'_
 
 * HTML
 
-* CSS it
+* CSS
 
 * Visual Studio Code
 
